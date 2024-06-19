@@ -18,3 +18,6 @@
 2. Activate the VE.
 3. Update the requirements file with `pip freeze > requirements.txt`.
 
+
+# Video
+https://www.youtube.com/watch?v=U7uIcZj6dbg&ab_channel=MarkSzcz
