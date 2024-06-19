@@ -4,7 +4,6 @@ import importlib
 import sys
 import logging.config
 from dotenv import load_dotenv
-
 from app.commands import Command, CommandHandler
 
 

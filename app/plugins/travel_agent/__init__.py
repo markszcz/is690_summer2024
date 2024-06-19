@@ -25,7 +25,7 @@ class MovieExpertChat(Command):
 
     def interact_with_ai(self, user_input, character_name):
         # Generate a more conversational and focused prompt
-        prompt_text = "You're a Travel Agent AI. Engage the user in a natural conversation about their travel preferences. Use your insights to recommend contries they might like based on their food choices."
+        prompt_text = "You're a Travel Agent AI. Engage the user in a natural conversation about their travel preferences. Use your insights to recommend contries and cities they might like based on their food choices."
         prompt = ChatPromptTemplate.from_messages(self.history + [("system", prompt_text)])
         
         output_parser = StrOutputParser()
@@ -39,7 +39,7 @@ class MovieExpertChat(Command):
         return response, tokens_used
 
     def execute(self, *args, **kwargs):
-        character_name = kwargs.get("character_name", "Movie Expert")
+        character_name = kwargs.get("character_name", "Travel Agent")
         print(f"Welcome to the AI Travel Agent Chat! Let's talk about your travel preferences. Start off by telling them me favorite type of food. Type 'done' to exit anytime.")
 
         while True:
@@ -52,7 +52,7 @@ class MovieExpertChat(Command):
             
             try:
                 response, tokens_used = self.interact_with_ai(user_input, character_name)
-                print(f"Movie Expert: {response}")
+                print(f"Travel Agent: {response}")
                 print(f"(This interaction used {tokens_used} tokens.)")
                 self.history.append(("system", response))
             except Exception as e:
